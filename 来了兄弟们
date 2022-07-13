@@ -1,1 +1,68 @@
+bool RobotMain::eventFilter(QObject  *obj, QEvent *event)
+{
+    if (obj == ui->video_1)//当事件发生在u1（为Qlabel型）控件上
+    {
+        if (event->type() == QEvent::MouseButtonDblClick)//当为双击事件时
+        {
+            ui->video_2->setVisible(false);
+            ui->video_3->setVisible(false);
+            ui->video_4->setVisible(false);
+        }
+        else if (event->type() == QEvent::MouseButtonPress)
+        {
+            ui->video_2->setVisible(true);
+            ui->video_3->setVisible(true);
+            ui->video_4->setVisible(true);
+        }
+        return QObject::eventFilter(obj, event);
+    }
+    if (obj == ui->video_2)//当事件发生在u1（为Qlabel型）控件上
+    {
+        if (event->type() == QEvent::MouseButtonDblClick)//当为双击事件时
+        {
+            ui->video_1->setVisible(false);
+            ui->video_3->setVisible(false);
+            ui->video_4->setVisible(false);
+        }
+        else if (event->type() == QEvent::MouseButtonPress)
+        {
+            ui->video_1->setVisible(true);
+            ui->video_3->setVisible(true);
+            ui->video_4->setVisible(true);
+        }
+        return QObject::eventFilter(obj, event);
+    }
+    if (obj == ui->video_3)//当事件发生在u1（为Qlabel型）控件上
+    {
+        if (event->type() == QEvent::MouseButtonDblClick)//当为双击事件时
+        {
+            ui->video_1->setVisible(false);
+            ui->video_2->setVisible(false);
+            ui->video_4->setVisible(false);
+        }
+        else if (event->type() == QEvent::MouseButtonPress)
+        {
+            ui->video_1->setVisible(true);
+            ui->video_2->setVisible(true);
+            ui->video_4->setVisible(true);
+        }
+        return QObject::eventFilter(obj, event);
+    }
+    if (obj == ui->video_4)//当事件发生在u1（为Qlabel型）控件上
+    {
+        if (event->type() == QEvent::MouseButtonDblClick)//当为双击事件时
+        {
+            ui->video_1->setVisible(false);
+            ui->video_2->setVisible(false);
+            ui->video_3->setVisible(false);
+        }
+        else if (event->type() == QEvent::MouseButtonPress)
+        {
+            ui->video_1->setVisible(true);
+            ui->video_2->setVisible(true);
+            ui->video_3->setVisible(true);
+        }
+        return QObject::eventFilter(obj, event);
+    }
 
+}
